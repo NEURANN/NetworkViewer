@@ -7,5 +7,5 @@ idna==3.6
 Jinja2==3.1.3
 MarkupSafe==2.1.5
 multidict==6.0.5
-neurannparser @ https://github.com/NEURANN/NetworkParser/releases/download/v0.0.1/neurannparser-0.0.1-py3-none-win_amd64.whl
+neurannparser @ https://github.com/NEURANN/NetworkParser/releases/download/v0.0.2/neurannparser-0.0.2-py3-none-win_amd64.whl
 yarl==1.9.4
