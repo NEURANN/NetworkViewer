@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEURANN Viewer</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <form action="/test_upload" method="post" enctype="multipart/form-data">
+      <label for="chromosome_file">Chromosome file:</label>
+      <input type="file" name="chromosome_file" title="Chromosome file to be parsed"></input><br>
+      <input type="submit">
+    </form>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

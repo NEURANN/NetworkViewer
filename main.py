@@ -7,8 +7,16 @@ import os
 
 from neurannparser import GenericChromosomeParseResult
 
-async def g_index(request):
-    return web.FileResponse("index.html")
+
+def serve_static_file(file_path, override_route=None):
+    async def static_page(request):
+        nonlocal file_path
+        return web.FileResponse(file_path)
+    
+    if override_route == None:
+        return web.get(f"/static/{file_path}", static_page)
+    else:
+        return web.get(override_route, static_page)
 
 
 def get_time_hash():
@@ -36,8 +44,11 @@ async def p_upload(request):
 
 app = web.Application()
 app.add_routes([
-    web.get("/", g_index),
-    web.post("/test_upload", p_upload)
+    serve_static_file("frontend/dist/index.html", "/"),
+    web.post("/test_upload", p_upload),
+
+
+    web.static("/", "frontend/dist"),
 ])
 
 web.run_app(app)
